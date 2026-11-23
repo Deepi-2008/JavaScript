@@ -1,0 +1,8 @@
+<document class=addEbentListener("DOMcontentLoaded",function () {
+    var animalImages = document.querySelectorAll(".animal-image";
+    animalImages.forEach(function (image) {
+        image.addEventListener("click",function () {
+            this.classList.toggle("green-border");
+        });
+    });
+    };               
