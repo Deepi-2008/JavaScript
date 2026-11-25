@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> form </title>
+    </head>
+    <body>
+        <form id="userform">
+            <label>Name:<input type="text" id="name1"</label>
+            <br>
+            <br>
+            <label>Mobile:<input type="tel" id="mobile1"</label>
+            <br>
+            <br>
+            <label>Email:<input type="email" id="email"</label>
+            <br>
+            <br>
+            <button type="sumbit">sumbit</button>
+        </form>
+        <script>
+            function ValidateName(name) {
+                if (name == null || name == "name") {
+                    alert("name can't be blank!");
+                    return false;
+                }
+                if(name.length < 3){
+                    alert("name must be atleast 3 characters long!");
+                    return false;
+                }
+                return true;
+
+            }
+            function validateForm(){
+                var name = document.getElementById("name").value.trim();
+                var mobile = document.getElementById("mobile").value.trim();
+                var email  = document.getElementById("email").value.trim();
+                if (!validateName(name)) {
+                    return false;
+                }
+                if (mobile == null || mobile == "") {
+                    alert("mobile number can't be blank!");
+                    return false;
+                }
+                if (mobile.length  !== 10) {
+                    alert("mobile number mudt be exactly 10 digits long!");
+                    return false;
+
+                }
+                for (var i = 0; i < mobile.length;i++){
+                    if(mobile[i] < '0' || mobile[i] > '9'){
+                        alert("mobile number must contain digits only!");
+                        return false;
+                    }
+                    if(email == null || email == "email"){
+                        alert ("email ID can't be blank!");
+                        return false;
+                    }
+                   // var atIndex = email.indexOf("@");
+                    //var dotIndex = email.lastIndexOf(".");
+                    //if(atIndex < 1 || dotIndex < atIndex + 2 || dotIndex === email.length - 1)
+                    //alert("please enter a valid email address!");
+                //return false;
+                //}
+                //alert("form submitted successfully!")
+                //return true;
+             //}
+             function validateEmail(email){
+                var reg = newRegExp("^[a-z-zo-9_.]+@[a-zA-Zo-9.]+$");
+                if(!reg.test(email)){
+                    alert("invalid e-mail Address!");
+                    return false;
+                }
+                return true;
+             }
+    </script>
+    </body>
+    </html>  
